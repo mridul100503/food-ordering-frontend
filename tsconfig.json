@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "paths":{
+      "@/*": ["src/*"]
+    }
+  }
+}
