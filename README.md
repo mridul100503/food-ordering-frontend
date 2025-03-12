@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Food Ordering Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Food Ordering application, providing a user-friendly interface for browsing restaurants, ordering food, making payments, and tracking orders.
 
-Currently, two official plugins are available:
+## Features
+- User Authentication (JWT-based login/signup)
+- Browse Restaurants and Menus
+- Add to Cart & Checkout
+- Order Tracking
+- 
+- Responsive Design
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend**: React.js, Vite
+- **State Management**: Redux Toolkit
+- **UI Framework**: Tailwind CSS
+- **Routing**: React Router
+- **Payments**: Stripe / Razorpay
+- 
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/food-ordering-frontend.git
+   cd food-ordering-frontend
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create a `.env` file and add the following environment variables:
+   ```env
+   VITE_API_BASE_URL=http://localhost:5000
+   VITE_STRIPE_PUBLIC_KEY=your_stripe_public_key
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Project Structure
+```
+food-ordering-frontend/
+├── src/
+│   ├── components/      # Reusable UI components
+│   ├── pages/           # Page components
+│   ├── redux/           # Redux store & slices
+│   ├── services/        # API services
+│   ├── styles/          # Global styles
+│   ├── Approutes.tsx          # Main app component
+│   ├── main.jsx         # Entry point
+├── public/              # Static assets
+├── .env                 # Environment variables
+├── package.json         # Project dependencies
+├── vite.config.js       # Vite configuration
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Available Scripts
+- `npm run dev` - Start the development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview the production build
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Contributing
+Contributions are welcome! Feel free to submit a pull request.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## License
+This project is licensed under the MIT License.
+
